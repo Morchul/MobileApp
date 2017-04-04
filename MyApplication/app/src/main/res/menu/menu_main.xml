@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.silvanott.bla.MainActivity">
+    <item
+        android:id="@+id/action_simple"
+        android:orderInCategory="100"
+        android:title="Simple"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_advanced"
+        android:orderInCategory="100"
+        android:title="Advanced"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_programmer"
+        android:orderInCategory="100"
+        android:title="Programmer"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="Settings"
+        app:showAsAction="never" />
+</menu>
