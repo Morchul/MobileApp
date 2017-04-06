@@ -116,7 +116,7 @@ public class CustomPagerAdapter extends PagerAdapter{
                 ImageView minute = (ImageView) a.findViewById(R.id.imageView6);
                 ImageView second = (ImageView) a.findViewById(R.id.imageView5);
                 second.setRotation(time.time/10 % 6000*0.06f);
-                minute.setRotation(time.time/1000 % 3600*0.1f);
+                minute.setRotation((time.time/1000 % 3600*0.1f));
                 hour.setRotation(time.time/60000 % 720*0.5f);
                 tv.setText(s);
             }

@@ -17,7 +17,7 @@ import java.util.EmptyStackException;
  */
 public class Calculator {
 
-    private String number = "0",calc = "", calculation = "",text="0";
+    private String number = "0",calc = "", calculation = "";
     private boolean point = true,refresh = false,input = false;
     private String last = "=",number1,operator;
 
@@ -86,12 +86,11 @@ public class Calculator {
     public void add(String s){
         try{
 
-            if((number.length()>=18) || last.equals("^2") && test(s,"+-*/",true)){
+            if((number.length()>=18) || last.equals("^2") && test(s,"+-*/",true) || test(s,"+-*/",false) && (number.equals("") || number.equals("0"))){
                 return;
             }
             if(test(s,"+-/*",false) && test(last,"+-*/",false) || number.equals("0") && last.equals("0")){
                 number = number.substring(0,number.length()-1);
-                text = number;
             }
 
 
@@ -105,7 +104,6 @@ public class Calculator {
             if(refresh){
                 synchron(number);
                 number = "";
-                text = "";
                 point = true;
                 refresh = false;
                 operator = "";
@@ -115,22 +113,19 @@ public class Calculator {
             }
             if((number.equals("0") && last.equals("=") && !s.equals(".")) || last == "=" && test(s,"+-/*^π!",true)){
                 number = "";
-                text = "";
                 synchron("");
             }
             if(number.equals("") && s.equals(".")){
                 number += "0";
-                text = number;
             }
             if(s.equals(".")){
                 point = false;
             }
             switch(s){
                 case "!": operator = "!"; break;
-                case "^2": operator = "^2"; number += hochtief(true,"2");text= number; last = "^2"; return;
+                case "^2": operator = "^2"; number += hochtief(true,"2"); last = "^2"; return;
             }
             number += s;
-            text = number;
             last = s;
         }
         catch(Exception e){}
@@ -146,7 +141,6 @@ public class Calculator {
     public void remove(int i){
         if(last.equals("=")){
             number = "0";
-            text = "0";
             synchron("");
             return;
         }
@@ -156,10 +150,8 @@ public class Calculator {
             }
             number = number.substring(0, number.length() - i);
             last = number.substring(number.length() - 1);
-            text = number;
         }else{
             number = "";
-            text="";
             last = "0";
         }
     }
@@ -259,10 +251,13 @@ public class Calculator {
     }
 
     public void negate(){
-        if(number.charAt(0) == '-'){
-            number = number.substring(1,number.length());}
-        else{number = "-" + number;}
-        text = number;
+        try {
+            if (number.charAt(0) == '-') {
+                number = number.substring(1, number.length());
+            } else {
+                number = "-" + number;
+            }
+        }catch(Exception e){}
     }
 
     public void synchron(String add){
@@ -309,7 +304,6 @@ public class Calculator {
             }
             else {
                 number = value;
-                text = number;
                 last = value;
             }
             input = false;
@@ -317,12 +311,9 @@ public class Calculator {
         else{
             number1 = number;
             number = "";
-            text = number;
             input = true;
             operator = value;
             last= value;
         }
-
-
     }
 }

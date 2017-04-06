@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         switch(eingabe){
             case "=": calc.calculate(); break;
             case "AC":calc.allClear(); break;
-            case "C": calc.remove(1); break;
+            case "\u232B": calc.remove(1); break;
             case "+/-": calc.negate(); break;
             default: calc.add(eingabe);
         }

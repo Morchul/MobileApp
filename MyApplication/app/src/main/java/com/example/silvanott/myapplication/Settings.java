@@ -83,15 +83,13 @@ public class Settings extends AppCompatActivity {
         redb.setProgress(sp.getColor("keyrb"));
         greenb.setProgress(sp.getColor("keygb"));
         blueb.setProgress(sp.getColor("keybb"));
-        changeButtonColor(btn,true);
-        changeButtonColor(btnb,false);
+        changeColor(btn,true);
+        changeColor(btnb,false);
 
         red.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                changeColor(true);
-                //btn.setBackgroundColor(Color.rgb(red.getProgress(),green.getProgress(),blue.getProgress()));
-                changeButtonColor(btn,true);
+                changeColor(btn,true);
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {}
@@ -103,8 +101,7 @@ public class Settings extends AppCompatActivity {
         green.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                changeColor(true);
-                changeButtonColor(btn,true);
+                changeColor(btn,true);
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {}
@@ -114,8 +111,7 @@ public class Settings extends AppCompatActivity {
         blue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                changeColor(true);
-                changeButtonColor(btn,true);
+                changeColor(btn,true);
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {}
@@ -125,8 +121,7 @@ public class Settings extends AppCompatActivity {
         redb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                changeColor(false);
-                changeButtonColor(btnb,false);
+                changeColor(btnb, false);
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {}
@@ -136,8 +131,7 @@ public class Settings extends AppCompatActivity {
         greenb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                changeColor(false);
-                changeButtonColor(btnb,false);
+                changeColor(btnb,false);
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {}
@@ -147,8 +141,7 @@ public class Settings extends AppCompatActivity {
         blueb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                changeColor(false);
-                changeButtonColor(btnb,false);
+                changeColor(btnb,false);
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {}
@@ -186,7 +179,7 @@ public class Settings extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void changeColor(boolean a) {
+    public void changeColor(Button but, boolean a) {
         if (a) {
             MainActivity.coord.setBackgroundColor(Color.rgb(red.getProgress(), green.getProgress(), blue.getProgress()));
             if (red.getProgress() + green.getProgress() + blue.getProgress() > 382) {
@@ -209,32 +202,31 @@ public class Settings extends AppCompatActivity {
                 }
             }
         }
-    }
-    public void changeButtonColor(Button b, boolean background){
-        if(background){
-            Drawable d = b.getBackground();
+
+        if(a){
+            Drawable d = but.getBackground();
             d.clearColorFilter();
             if(!(red.getProgress()==255 && green.getProgress()==255 && blue.getProgress()==255))
-                d.setColorFilter(Color.argb(200,red.getProgress(), green.getProgress(), blue.getProgress()), PorterDuff.Mode.ADD);
+                d.setColorFilter(Color.rgb(red.getProgress(), green.getProgress(), blue.getProgress()), PorterDuff.Mode.ADD);
 
             if (red.getProgress() + green.getProgress() + blue.getProgress() > 382) {
-                b.setTextColor(Color.BLACK);
+                but.setTextColor(Color.BLACK);
             } else {
-                b.setTextColor(Color.WHITE);
+                but.setTextColor(Color.WHITE);
             }
         }else {
-            Drawable d = b.getBackground();
+            Drawable d = but.getBackground();
             d.clearColorFilter();
             if(!(redb.getProgress()==255 && greenb.getProgress()==255 && blueb.getProgress()==255))
                 d.setColorFilter(Color.rgb(redb.getProgress(), greenb.getProgress(), blueb.getProgress()), PorterDuff.Mode.ADD);
             if (redb.getProgress() + greenb.getProgress() + blueb.getProgress() > 382) {
-                b.setTextColor(Color.BLACK);
+                but.setTextColor(Color.BLACK);
             } else {
-                b.setTextColor(Color.WHITE);
+                but.setTextColor(Color.WHITE);
             }
         }
-        //b.setBackgroundResource(R.drawable.simpel_null);
     }
+
     public void advancedOrientation(View v){
         boolean checked = ((CheckBox) v).isChecked();
         if(checked){

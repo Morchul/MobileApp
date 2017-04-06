@@ -283,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void setPointer(ImageView phour,ImageView pmin,ImageView psec,Long time){
         psec.setRotation(time/10 % 6000*0.06f);
-        pmin.setRotation(time/1000 % 3600*0.1f);
+        pmin.setRotation((time/1000 % 3600*0.1f));
         phour.setRotation(time/60000 % 720*0.5f);
     }
 

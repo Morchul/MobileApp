@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -23,10 +24,12 @@ import java.util.List;
 
 public class Programmer extends AppCompatActivity {
 
+    List<Button> bin,dez,hex,okt;
     SharePreferences sp = new SharePreferences();
     public static TextView tx;
     public static List<Button> buttons = new ArrayList<Button>();
     public static ConstraintLayout coord;
+    String number = "";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +63,31 @@ public class Programmer extends AppCompatActivity {
                 b.setTextColor(Color.WHITE);
             }
         }
+        Button komma = (Button) findViewById(R.id.button21);
+        komma.setEnabled(false);
+
+        bin = new ArrayList<Button>();
+        bin.add((Button) findViewById(R.id.button));
+        bin.add((Button) findViewById(R.id.button13));
+        okt = new ArrayList<Button>();
+        okt.add((Button) findViewById(R.id.button5));
+        okt.add((Button) findViewById(R.id.button9));
+        okt.add((Button) findViewById(R.id.button10));
+        okt.add((Button) findViewById(R.id.button11));
+        okt.add((Button) findViewById(R.id.button14));
+        okt.add((Button) findViewById(R.id.button15));
+        dez = new ArrayList<Button>();
+        dez.add((Button) findViewById(R.id.button6));
+        dez.add((Button) findViewById(R.id.button7));
+        hex = new ArrayList<Button>();
+        hex.add((Button) findViewById(R.id.button3));
+        hex.add((Button) findViewById(R.id.button4));
+        hex.add((Button) findViewById(R.id.button8));
+        hex.add((Button) findViewById(R.id.button12));
+        hex.add((Button) findViewById(R.id.button16));
+        hex.add((Button) findViewById(R.id.button22));
+
+
     }
 
     @Override
@@ -91,5 +119,19 @@ public class Programmer extends AppCompatActivity {
 
 
         return super.onOptionsItemSelected(item);
+    }
+    public void click(View v){
+        String input = ((Button) v).getText().toString();
+        switch(input){
+            case "\u232B": if(number.length()>0){number = number.substring(0,number.length()-1);}
+                input=""; break;
+            case "AC": number=""; input=""; break;
+        }
+        number += input;
+        setText(number);
+    }
+    public void setText(String text){
+        TextView tv = (TextView) findViewById(R.id.text);
+        tv.setText(text);
     }
 }

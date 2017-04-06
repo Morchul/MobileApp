@@ -254,7 +254,7 @@
         android:layout_marginStart="1dp"
         android:background="@drawable/erweitert"
         android:onClick="click"
-        android:text="C"
+        android:text="⌫"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/button36"
         app:layout_constraintLeft_toRightOf="@+id/button40" />

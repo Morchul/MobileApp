@@ -122,7 +122,7 @@ public class Advanced extends AppCompatActivity {
             switch (eingabe) {
                 case "=":   calc.calculate();break;
                 case "AC":  calc.allClear();break;
-                case "C":   calc.remove(1);break;
+                case "\u232B":   calc.remove(1);break;
                 case "+/-": calc.negate();break;
                 case "x!":calc.add("!");break;
                 case "x\u00b2":calc.add("^2");break;
