@@ -10,196 +10,211 @@
     <Button
         android:id="@+id/button85"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:textSize="20sp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        app:layout_constraintBottom_toTopOf="@+id/button77"
-        app:layout_constraintLeft_toRightOf="@+id/button84"
-        android:layout_marginStart="1dp"
         android:layout_marginBottom="1dp"
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
         android:text="+/-"
-        android:layout_width="88dp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button77"
+        app:layout_constraintLeft_toRightOf="@+id/button84" />
 
     <Button
-        android:text="C"
         android:id="@+id/button84"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:textSize="20sp"
-        android:layout_height="44dp"
         android:layout_width="88dp"
-        app:layout_constraintLeft_toRightOf="@+id/button79"
-        app:layout_constraintBottom_toTopOf="@+id/button78"
+        android:layout_height="44dp"
+        android:layout_marginBottom="1dp"
         android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp" />
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="C"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button78"
+        app:layout_constraintLeft_toRightOf="@+id/button79" />
 
     <Button
         android:id="@+id/button83"
         style="@android:style/Widget.Button"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
         android:onClick="click"
         android:textSize="20sp"
-        android:layout_height="44dp"
         app:layout_constraintBottom_toTopOf="@+id/button57"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintLeft_toRightOf="@+id/button81"
-        android:layout_marginStart="1dp"
-        android:layout_width="88dp" />
+        app:layout_constraintLeft_toRightOf="@+id/button81" />
 
     <Button
-        android:text="/"
         android:id="@+id/button82"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toRightOf="@+id/button85"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/button76"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
         android:layout_marginBottom="1dp"
         android:layout_marginStart="1dp"
-        android:layout_height="44dp"
-        android:layout_width="0dp" />
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="/"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button76"
+        app:layout_constraintLeft_toRightOf="@+id/button85"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
         android:id="@+id/button81"
         style="@android:style/Widget.Button"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/horizont"
         android:onClick="click"
         android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/button53"
-        android:layout_marginBottom="1dp"
-        android:layout_height="44dp"
-        android:layout_width="88dp" />
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:id="@+id/button80"
         style="@android:style/Widget.Button"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
         android:onClick="click"
         android:textSize="20sp"
-        android:layout_height="44dp"
-        android:layout_width="88dp"
         app:layout_constraintBottom_toTopOf="@+id/button63"
-        app:layout_constraintLeft_toRightOf="@+id/button83"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp" />
+        app:layout_constraintLeft_toRightOf="@+id/button83" />
 
     <Button
-        android:text="8"
         android:id="@+id/button78"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:textSize="20sp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        app:layout_constraintBottom_toTopOf="@+id/button71"
-        app:layout_constraintLeft_toRightOf="@+id/button75"
-        android:layout_marginStart="1dp"
         android:layout_marginBottom="1dp"
-        android:layout_width="88dp" />
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="8"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button71"
+        app:layout_constraintLeft_toRightOf="@+id/button75" />
 
     <Button
-        android:text="9"
         android:id="@+id/button77"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:textSize="20sp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        app:layout_constraintBottom_toTopOf="@+id/button73"
-        app:layout_constraintLeft_toRightOf="@+id/button78"
-        android:layout_marginStart="1dp"
         android:layout_marginBottom="1dp"
-        android:layout_width="88dp" />
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="9"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button73"
+        app:layout_constraintLeft_toRightOf="@+id/button78" />
 
     <Button
-        android:text="*"
         android:id="@+id/button76"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:layout_marginStart="1dp"
-        app:layout_constraintLeft_toRightOf="@+id/button77"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/button72"
-        android:layout_marginBottom="1dp"
-        android:textSize="20sp"
+        android:layout_width="0dp"
         android:layout_height="44dp"
-        android:layout_width="0dp" />
+        android:layout_marginBottom="1dp"
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="*"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button72"
+        app:layout_constraintLeft_toRightOf="@+id/button77"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
-        android:text="4"
         android:id="@+id/button74"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        app:layout_constraintBottom_toTopOf="@+id/button70"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
         android:layout_marginBottom="1dp"
         android:layout_marginStart="1dp"
-        app:layout_constraintLeft_toRightOf="@+id/button62"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="4"
         android:textSize="20sp"
-        android:layout_height="44dp"
-        android:layout_width="88dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button70"
+        app:layout_constraintLeft_toRightOf="@+id/button62" />
 
     <Button
-        android:text="6"
         android:id="@+id/button73"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:textSize="20sp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        app:layout_constraintBottom_toTopOf="@+id/button68"
-        app:layout_constraintLeft_toRightOf="@+id/button71"
-        android:layout_marginStart="1dp"
         android:layout_marginBottom="1dp"
-        android:layout_width="88dp" />
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="6"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button68"
+        app:layout_constraintLeft_toRightOf="@+id/button71" />
 
     <Button
-        android:text="-"
         android:id="@+id/button72"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@+id/button73"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/button67"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
         android:layout_marginBottom="1dp"
         android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="-"
         android:textSize="20sp"
-        android:layout_height="44dp"
-        android:layout_width="0dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button67"
+        app:layout_constraintLeft_toRightOf="@+id/button73"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
-        android:text="1"
         android:id="@+id/button70"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:layout_marginStart="1dp"
-        app:layout_constraintLeft_toRightOf="@+id/button59"
-        app:layout_constraintBottom_toTopOf="@+id/button64"
-        android:layout_marginBottom="1dp"
-        android:textSize="20sp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        android:layout_width="88dp" />
+        android:layout_marginBottom="1dp"
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="1"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button64"
+        app:layout_constraintLeft_toRightOf="@+id/button59" />
 
     <Button
-        android:text="2"
         android:id="@+id/button69"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:textSize="20sp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        app:layout_constraintBottom_toTopOf="@+id/button64"
-        app:layout_constraintLeft_toRightOf="@+id/button70"
-        android:layout_marginStart="1dp"
         android:layout_marginBottom="1dp"
-        android:layout_width="88dp" />
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button64"
+        app:layout_constraintLeft_toRightOf="@+id/button70" />
 
     <Button
-        android:text="3"
         android:id="@+id/button68"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:layout_marginStart="1dp"
-        app:layout_constraintLeft_toRightOf="@+id/button69"
-        app:layout_constraintBottom_toTopOf="@+id/button65"
-        android:layout_marginBottom="1dp"
-        android:textSize="20sp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        android:layout_width="88dp" />
+        android:layout_marginBottom="1dp"
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button65"
+        app:layout_constraintLeft_toRightOf="@+id/button69" />
 
     <TextView
         android:text="0"
@@ -217,242 +232,261 @@
         app:layout_constraintHorizontal_bias="0.6" />
 
     <Button
-        android:text="("
         android:id="@+id/button37"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        android:layout_width="88dp" />
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="("
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
-        android:text="x\u207f"
         android:id="@+id/button51"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/button37"
-        android:layout_marginBottom="1dp"
-        android:textSize="20sp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        android:layout_width="88dp" />
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="x\u207f"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button37"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
-        android:text="\u207f\u221A"
         android:id="@+id/button52"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/button51"
-        android:layout_marginBottom="1dp"
-        android:textSize="20sp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        android:layout_width="88dp" />
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="\u207f\u221A"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button51"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
-        android:text="sin"
         android:id="@+id/button53"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        app:layout_constraintBottom_toTopOf="@+id/button52"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginBottom="1dp"
-        android:textSize="20sp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        android:layout_width="88dp" />
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="sin"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button52"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
-        android:text=")"
         android:id="@+id/button54"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginStart="1dp"
-        app:layout_constraintLeft_toRightOf="@+id/button37"
-        android:textSize="20sp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        android:layout_width="88dp" />
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text=")"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/button37" />
 
     <Button
-        android:text="x\u00b2"
         android:id="@+id/button55"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        app:layout_constraintBottom_toTopOf="@+id/button54"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
         android:layout_marginBottom="1dp"
         android:layout_marginStart="1dp"
-        app:layout_constraintLeft_toRightOf="@+id/button51"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="x\u00b2"
         android:textSize="20sp"
-        android:layout_height="44dp"
-        android:layout_width="88dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button54"
+        app:layout_constraintLeft_toRightOf="@+id/button51" />
 
     <Button
-        android:text="\u03c0"
         android:id="@+id/button56"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        app:layout_constraintBottom_toTopOf="@+id/button55"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintLeft_toRightOf="@+id/button52"
-        android:layout_marginStart="1dp"
-        android:textSize="20sp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        android:layout_width="88dp" />
+        android:layout_marginBottom="1dp"
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="\u03c0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button55"
+        app:layout_constraintLeft_toRightOf="@+id/button52" />
 
     <Button
-        android:text="cos"
         android:id="@+id/button57"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:textSize="20sp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        app:layout_constraintBottom_toTopOf="@+id/button56"
-        app:layout_constraintLeft_toRightOf="@+id/button53"
         android:layout_marginBottom="1dp"
         android:layout_marginStart="1dp"
-        android:layout_width="88dp" />
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="cos"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button56"
+        app:layout_constraintLeft_toRightOf="@+id/button53" />
 
     <Button
-        android:text="sin/asin"
         android:id="@+id/button58"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginStart="1dp"
-        app:layout_constraintLeft_toRightOf="@+id/button54"
-        android:textSize="18sp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        android:layout_width="88dp" />
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="sin/asin"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/button54" />
 
     <Button
         android:id="@+id/button59"
         style="@android:style/Widget.Button"
-        app:layout_constraintBottom_toTopOf="@+id/button58"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
         android:layout_marginBottom="1dp"
         android:layout_marginStart="1dp"
-        app:layout_constraintLeft_toRightOf="@+id/button55"
+        android:background="@drawable/horizont"
         android:textSize="20sp"
-        android:layout_height="44dp"
-        android:layout_width="88dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button58"
+        app:layout_constraintLeft_toRightOf="@+id/button55" />
 
     <Button
-        android:text="log"
         android:id="@+id/button62"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:textSize="20sp"
-        android:layout_height="44dp"
         android:layout_width="88dp"
-        app:layout_constraintLeft_toRightOf="@+id/button56"
-        app:layout_constraintBottom_toTopOf="@+id/button59"
+        android:layout_height="44dp"
+        android:layout_marginBottom="1dp"
         android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp" />
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="log"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button59"
+        app:layout_constraintLeft_toRightOf="@+id/button56" />
 
     <Button
         android:id="@+id/button63"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:textSize="20sp"
-        android:text="tan"
-        android:layout_height="44dp"
         android:layout_width="88dp"
-        app:layout_constraintBottom_toTopOf="@+id/button62"
-        app:layout_constraintLeft_toRightOf="@+id/button57"
+        android:layout_height="44dp"
+        android:layout_marginBottom="1dp"
         android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp" />
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="tan"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button62"
+        app:layout_constraintLeft_toRightOf="@+id/button57" />
 
     <Button
-        android:text="0"
         android:id="@+id/button64"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginStart="1dp"
-        app:layout_constraintLeft_toRightOf="@+id/button58"
-        android:textSize="20sp"
+        android:layout_width="177dp"
         android:layout_height="44dp"
-        android:layout_width="177dp" />
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont_null"
+        android:onClick="click"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/button58" />
 
     <Button
-        android:text="."
         android:id="@+id/button65"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginStart="1dp"
-        app:layout_constraintLeft_toRightOf="@+id/button64"
-        android:textSize="20sp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        android:layout_width="88dp" />
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="."
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/button64" />
 
     <Button
-        android:text="="
         android:id="@+id/button66"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginStart="1dp"
-        app:layout_constraintLeft_toRightOf="@+id/button65"
-        android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_width="0dp"
         android:layout_height="44dp"
-        android:layout_width="0dp" />
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="="
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@+id/button65"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
-        android:text="+"
         android:id="@+id/button67"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:layout_marginStart="1dp"
-        app:layout_constraintLeft_toRightOf="@+id/button68"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/button66"
-        android:layout_marginBottom="1dp"
-        android:textSize="20sp"
+        android:layout_width="0dp"
         android:layout_height="44dp"
-        android:layout_width="0dp" />
+        android:layout_marginBottom="1dp"
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="+"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button66"
+        app:layout_constraintLeft_toRightOf="@+id/button68"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
-        android:text="5"
         android:id="@+id/button71"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:textSize="20sp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        app:layout_constraintBottom_toTopOf="@+id/button69"
-        app:layout_constraintLeft_toRightOf="@+id/button74"
-        android:layout_marginStart="1dp"
         android:layout_marginBottom="1dp"
-        android:layout_width="88dp" />
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="5"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button69"
+        app:layout_constraintLeft_toRightOf="@+id/button74" />
 
     <Button
-        android:text="7"
         android:id="@+id/button75"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@+id/button63"
-        app:layout_constraintBottom_toTopOf="@+id/button74"
-        android:textSize="20sp"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
+        android:layout_width="88dp"
         android:layout_height="44dp"
-        android:layout_width="88dp" />
+        android:layout_marginBottom="1dp"
+        android:layout_marginStart="1dp"
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="7"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button74"
+        app:layout_constraintLeft_toRightOf="@+id/button63" />
 
     <Button
-        android:text="AC"
         android:id="@+id/button79"
         style="@android:style/Widget.Button"
-        android:onClick="click"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toRightOf="@+id/button80"
-        app:layout_constraintBottom_toTopOf="@+id/button75"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
         android:layout_marginBottom="1dp"
         android:layout_marginStart="1dp"
-        android:layout_height="44dp"
-        android:layout_width="88dp" />
+        android:background="@drawable/horizont"
+        android:onClick="click"
+        android:text="AC"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button75"
+        app:layout_constraintLeft_toRightOf="@+id/button80" />
 
     <TextView
         android:layout_width="0dp"

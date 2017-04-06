@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -59,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         for (Button b : buttons){
-            b.setBackgroundColor(Color.rgb(sp.getColor("keyrb"), sp.getColor("keygb"), sp.getColor("keybb")));
+            Drawable d = b.getBackground();
+            d.setColorFilter(Color.rgb(sp.getColor("keyrb"), sp.getColor("keygb"), sp.getColor("keybb")), PorterDuff.Mode.ADD);
+            //b.setBackgroundColor(Color.rgb(sp.getColor("keyrb"), sp.getColor("keygb"), sp.getColor("keybb")));
             if(sp.getColor("keyrb") + sp.getColor("keygb") + sp.getColor("keybb") > 382){
                 b.setTextColor(Color.BLACK);
             }

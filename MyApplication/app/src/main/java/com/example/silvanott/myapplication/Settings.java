@@ -4,9 +4,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ImageSpan;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,6 +44,7 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarsettings);
         setSupportActionBar(toolbar);
+
         TextView about = (TextView) findViewById(R.id.textabout);
         cb = (CheckBox) findViewById(R.id.checkBox);
         sp.Settings = getSharedPreferences(sp.SETTINGS_FILE,sp.SETTINGS_MODE);
@@ -48,13 +55,13 @@ public class Settings extends AppCompatActivity {
                 "\n" +
                 "Developed by:\n" +
                 "\n" +
-                "Fabian Azad Kurt\n" +
-                "(GUI-Design)\n" +
-                "E-Mail: pumba99@outlook.com\n" +
-                "\n" +
                 "Silvan Ott\n" +
                 "(Programming)\n" +
                 "E-Mail: angel.alive8991@gmail.com\n" +
+                "\n" +
+                "Fabian Azad Kurt\n" +
+                "(GUI-Design)\n" +
+                "E-Mail: pumba99@outlook.com\n" +
                 "\n" +
                 "Enrico Buchs\n" +
                 "(Project initiator)\n" +
@@ -83,7 +90,7 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 changeColor(true);
-                btn.setBackgroundColor(Color.rgb(red.getProgress(),green.getProgress(),blue.getProgress()));
+                //btn.setBackgroundColor(Color.rgb(red.getProgress(),green.getProgress(),blue.getProgress()));
                 changeButtonColor(btn,true);
             }
             @Override
@@ -190,7 +197,10 @@ public class Settings extends AppCompatActivity {
         }
         else{
             for (Button b : MainActivity.buttons){
-                b.setBackgroundColor(Color.rgb(redb.getProgress(), greenb.getProgress(), blueb.getProgress()));
+                Drawable d = b.getBackground();
+                d.clearColorFilter();
+                if(!(redb.getProgress()==255 && greenb.getProgress()==255 && blueb.getProgress()==255))
+                    d.setColorFilter(Color.rgb(redb.getProgress(), greenb.getProgress(), blueb.getProgress()), PorterDuff.Mode.ADD);
                 if(redb.getProgress() + greenb.getProgress() + blueb.getProgress() > 382){
                     b.setTextColor(Color.BLACK);
                 }
@@ -202,20 +212,28 @@ public class Settings extends AppCompatActivity {
     }
     public void changeButtonColor(Button b, boolean background){
         if(background){
-            b.setBackgroundColor(Color.rgb(red.getProgress(), green.getProgress(), blue.getProgress()));
+            Drawable d = b.getBackground();
+            d.clearColorFilter();
+            if(!(red.getProgress()==255 && green.getProgress()==255 && blue.getProgress()==255))
+                d.setColorFilter(Color.argb(200,red.getProgress(), green.getProgress(), blue.getProgress()), PorterDuff.Mode.ADD);
+
             if (red.getProgress() + green.getProgress() + blue.getProgress() > 382) {
                 b.setTextColor(Color.BLACK);
             } else {
                 b.setTextColor(Color.WHITE);
             }
         }else {
-            b.setBackgroundColor(Color.rgb(redb.getProgress(), greenb.getProgress(), blueb.getProgress()));
+            Drawable d = b.getBackground();
+            d.clearColorFilter();
+            if(!(redb.getProgress()==255 && greenb.getProgress()==255 && blueb.getProgress()==255))
+                d.setColorFilter(Color.rgb(redb.getProgress(), greenb.getProgress(), blueb.getProgress()), PorterDuff.Mode.ADD);
             if (redb.getProgress() + greenb.getProgress() + blueb.getProgress() > 382) {
                 b.setTextColor(Color.BLACK);
             } else {
                 b.setTextColor(Color.WHITE);
             }
         }
+        //b.setBackgroundResource(R.drawable.simpel_null);
     }
     public void advancedOrientation(View v){
         boolean checked = ((CheckBox) v).isChecked();
