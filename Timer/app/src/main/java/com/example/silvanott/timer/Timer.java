@@ -9,14 +9,21 @@ import java.util.TimeZone;
  * Created by silvan.ott on 22.03.2017.
  */
 
+/**
+ * Timer Klasse die die Zeit des Timers berechnet
+ */
 public class Timer {
     Long start;
 
     public Long time = 0L;
-    boolean reset = false,stop = false;
+    boolean reset = false;
     public Timer(Long time){start = System.currentTimeMillis()+time;}
     public Timer(){}
 
+    /**
+     * berechnet die Zeit des Timers und gibt sie zurück
+     * @return die Zeit als String
+     */
     public synchronized String getTime(){
         Long now = System.currentTimeMillis();
         time = start-now;
@@ -28,21 +35,10 @@ public class Timer {
         }
         return strDate;
     }
-    public synchronized void startTime(int hour,int min,int sec){
-        if(reset) {
-            reset = false;
-            time = -351L;
-            start = System.currentTimeMillis()+(1000*60L*60*hour)+(1000*60*min)+(sec*1000);
-            Log.d("Test reset","Test reset " + start + "\n" + System.currentTimeMillis());
-        }
-        if(stop) {
-            start = System.currentTimeMillis() + time;
-            stop = false;
-        }
-    }
-    public synchronized void stopTime(){
-        stop = true;
-    }
+
+    /**
+     * setzt die Zeit zurück
+     */
     public synchronized void resetTime(){
         reset= true;
     }

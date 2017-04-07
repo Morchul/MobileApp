@@ -19,6 +19,9 @@ import android.widget.TextView;
  * Created by silvan.ott on 15.02.2017.
  */
 
+/**
+ * CustomPagerAdapter ist für das Swip View und den Timer zuständig
+ */
 public class CustomPagerAdapter extends PagerAdapter{
 
     private Context mContext;
@@ -33,11 +36,20 @@ public class CustomPagerAdapter extends PagerAdapter{
     static NumberPicker npsecond;
     public static boolean ringing = true;
 
-
+    /**
+     * Construktor der das Context setzt
+     * @param context
+     */
     public CustomPagerAdapter(Context context) {
         mContext = context;
     }
 
+    /**
+     * Instanziert die Items
+     * @param collection
+     * @param position
+     * @return gibt das layout Object zurück
+     */
     @Override
     public Object instantiateItem(ViewGroup collection, int position) {
         ModelObject modelObject = ModelObject.values()[position];
@@ -78,26 +90,53 @@ public class CustomPagerAdapter extends PagerAdapter{
         return layout;
     }
 
+    /**
+     * zerstört die Items welche nichtmehr angezeigt werden
+     * @param collection
+     * @param position
+     * @param view
+     */
     @Override
     public void destroyItem(ViewGroup collection, int position, Object view) {
         collection.removeView((View) view);
     }
 
+    /**
+     * Gibt die Anzahl der Views zurück
+     * @return anzahl Views
+     */
     @Override
     public int getCount() {
         return ModelObject.values().length;
     }
 
+    /**
+     * Testen ob ein gewisses layout von einem Object ist
+     * @param view
+     * @param object
+     * @return true oder false
+     */
     @Override
     public boolean isViewFromObject(View view, Object object) {
         return view == object;
     }
 
+    /**
+     * Gibt den Title des Views zurück
+     * @param position die Position von welchem der Titel zurückgegeben werden soll
+     * @return gibt den titel zurück
+     */
     @Override
     public CharSequence getPageTitle(int position) {
         ModelObject customPagerEnum = ModelObject.values()[position];
         return mContext.getString(customPagerEnum.getTitleResId());
     }
+
+    /**
+     * Setzt die Zeit des Timers und die Zeiger
+     * @param tv das TextView welche die Zeit anzeigt
+     * @param s der String mit der Zeit
+     */
     public static void setTimer(final TextView tv,final String s){
 
         a.runOnUiThread(new Runnable() {
@@ -123,10 +162,17 @@ public class CustomPagerAdapter extends PagerAdapter{
         });
     }
 
+    /**
+     * Stopt den Thread
+     */
     public static void stopth(){
         th.interrupt();
     }
 
+    /**
+     * gibt die Zeit zurück
+     * @return die Zeit
+     */
     public static Long getZeit(){
         if(actualtime == 0L){
             return (1000*60L*60*nphour.getValue())+(1000*60*npmin.getValue())+(1000*npsecond.getValue());
@@ -134,10 +180,17 @@ public class CustomPagerAdapter extends PagerAdapter{
         return actualtime;
     }
 
+    /**
+     * setzt die Zeit
+     * @param l die Zeit als Long
+     */
     public static void setZeit(Long l){
         actualtime = l;
     }
 
+    /**
+     * ring funktion die den Klingelton startet
+     */
     public static void ring(){
         if(ringing) {
             Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
@@ -146,6 +199,10 @@ public class CustomPagerAdapter extends PagerAdapter{
             ringing = false;
         }
     }
+
+    /**
+     * Setzt die Sichtbarkeit der Nuberpicker und der Uhr des Timers
+     */
     public static void setVisibility(){
         nphour = (NumberPicker) a.findViewById(R.id.numberPicker3);
         npmin = (NumberPicker) a.findViewById(R.id.numberPicker2);

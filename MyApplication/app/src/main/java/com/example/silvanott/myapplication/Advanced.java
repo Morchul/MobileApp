@@ -28,6 +28,9 @@ import java.util.List;
  * Created by silvan.ott on 31.01.2017.
  */
 
+/**
+ * die Advanced Klasse welche für den Advanced Rechner zuständig ist
+ */
 public class Advanced extends AppCompatActivity {
 
     SharePreferences sp = new SharePreferences();
@@ -36,6 +39,10 @@ public class Advanced extends AppCompatActivity {
     public static List<Button> buttons = new ArrayList<Button>();
     public static ConstraintLayout coord;
 
+    /**
+     * wird ausgeführt wenn die Activity Erstellt wird
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +82,6 @@ public class Advanced extends AppCompatActivity {
         for (Button b : buttons){
             Drawable d = b.getBackground();
             d.setColorFilter(Color.rgb(sp.getColor("keyrb"), sp.getColor("keygb"), sp.getColor("keybb")), PorterDuff.Mode.ADD);
-            //b.setBackgroundColor(Color.rgb(sp.getColor("keyrb"), sp.getColor("keygb"), sp.getColor("keybb")));
             if(sp.getColor("keyrb") + sp.getColor("keygb") + sp.getColor("keybb") > 382){
                 b.setTextColor(Color.BLACK);
             }
@@ -84,12 +90,23 @@ public class Advanced extends AppCompatActivity {
             }
         }
     }
+
+    /**
+     * Wenn das OptionMenu erstellt wird
+     * @param menu
+     * @return true
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+    /**
+     * Wenn ein Item des Menues ausgewählt wird
+     * @param item das Item das ausgewählt wird
+     * @return true
+     */
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
@@ -110,6 +127,11 @@ public class Advanced extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    /**
+     * Die methode die aufgerufen wird wenn man einen button drückt
+     * @param v das View des gedrückten Buttons
+     */
     public void click(View v){
         String eingabe = ((Button) v).getText()+"";
         if(calc.test(calc.getLast(),"+-*/", false) && calc.test(eingabe,"x)\u207f",false) ){//|| !calc.getOperator().equals("") && calc.test(eingabe,"+-*/",false) && !calc.getInput()){
@@ -152,6 +174,10 @@ public class Advanced extends AppCompatActivity {
         }
         ausgabe();
     }
+
+    /**
+     * gibt die Rechnung im TextView aus
+     */
     public void ausgabe(){
         tx.setText(calc.getNumber());
         calculate.setText(calc.getCalc());

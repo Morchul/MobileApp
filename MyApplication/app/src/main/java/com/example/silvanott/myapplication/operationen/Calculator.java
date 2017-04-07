@@ -15,12 +15,20 @@ import java.util.EmptyStackException;
 /**
  * Created by silvan.ott on 24.01.2017.
  */
+
+/**
+ * Die Calculator Klasse die Für das Rechnen zuständig ist
+ */
 public class Calculator {
 
     private String number = "0",calc = "", calculation = "";
     private boolean point = true,refresh = false,input = false;
     private String last = "=",number1,operator;
 
+    /**
+     * Behebt einige Fehl eingaben wie Klammern und falsche endungen durch operatoren und
+     * Berechnet den String und gibt ihn zurück
+     */
     public void calculate(){
         if(last.equals("=")){
             return ;
@@ -77,12 +85,39 @@ public class Calculator {
         }
     }
 
+    /**
+     * @return input
+     */
     public boolean getInput(){return input;}
+
+    /**
+     *
+     * @return last
+     */
     public String getLast(){return last;}
+
+    /**
+     *
+     * @return calc
+     */
     public String getCalc(){return calc;}
+
+    /**
+     *
+     * @return number
+     */
     public String getNumber(){return number;}
+
+    /**
+     *
+     * @return operator
+     */
     public String getOperator(){return operator;}
 
+    /**
+     * Nimmt die eingaben entgegen und fängt Falscheingaben ab
+     * @param s die Eingabe die gemacht wurde
+     */
     public void add(String s){
         try{
 
@@ -130,6 +165,10 @@ public class Calculator {
         }
         catch(Exception e){}
     }
+
+    /**
+     * Setzt die Rechnung zurück
+     */
     public void allClear(){
         synchron("");
         number = "0";
@@ -138,6 +177,10 @@ public class Calculator {
         input = false;
     }
 
+    /**
+     * entfernt eine Anzahl zeichen
+     * @param i anzahl entfernter Zeichen
+     */
     public void remove(int i){
         if(last.equals("=")){
             number = "0";
@@ -155,6 +198,14 @@ public class Calculator {
             last = "0";
         }
     }
+
+    /**
+     * Test Funktion die Testet ob ein gewisses zeichen in einem String vorkommt
+     * @param value Der zu testende Char
+     * @param test der String mit dem überprüft werden soll
+     * @param all bei false: wird geschaut ob das zeichen vorkommt, bei true ob das zeichen nicht vorkommt
+     * @return true oder false
+     */
     public boolean test(String value, String test, boolean all) {
         if (!all) {
             for (int i = 0; i < test.length(); i++) {
@@ -173,6 +224,11 @@ public class Calculator {
         }
     }
 
+    /**
+     * Ersetzt die Operatoren ^2 und ! und rechnet sie aus
+     * @param c der Operator
+     * @param i die Position an der der Operator steht
+     */
     public void change(char c, int i){
         String l = "",f = "";
         switch(c){
@@ -195,6 +251,12 @@ public class Calculator {
         }
     }
 
+    /**
+     * Nimmt die Zahl vor oder hinter einem Zeichen
+     * @param i das Zeichen
+     * @param up true = gibt die Zahl nach dem Operator zurück, false = die Zahl vor dem Operator
+     * @return gibt die Zahl zurück
+     */
     public String getZahl(int i,boolean up){
         String zahl = "",umdrehen = "";
         if(up){
@@ -218,6 +280,12 @@ public class Calculator {
         return zahl;
     }
 
+    /**
+     * Gibt die Hoch oder Tief gestellte Zahl zurück
+     * @param hoch true = hochgestellt, false = tiefgestellt
+     * @param zahl die Zahl die hoch- oder tiefgestellt zurück gegeben werden soll
+     * @return gibt die Hoch- oder Tiefgestellte Zahl zurück
+     */
     public String hochtief(boolean hoch,String zahl){
         if(hoch){
             switch (zahl){
@@ -250,6 +318,9 @@ public class Calculator {
         return zahl;
     }
 
+    /**
+     * Negiert die Aktuelle Zahl
+     */
     public void negate(){
         try {
             if (number.charAt(0) == '-') {
@@ -260,6 +331,10 @@ public class Calculator {
         }catch(Exception e){}
     }
 
+    /**
+     * Synchronisiert die Angezeigte Zahl mit der eingegebenen und mit dem zum Berechnenden String
+     * @param add
+     */
     public void synchron(String add){
         if (add.equals("")){
             calculation = "";
@@ -269,6 +344,11 @@ public class Calculator {
         calc += add;
         calculation += add;
     }
+
+    /**
+     * Advanced der die Operatoren hoch und wurzel umwandelt damit sie ausgerechnet werden können
+     * @param value der Operator
+     */
     public void advanced(String value){
 
         if(last.equals("=")){

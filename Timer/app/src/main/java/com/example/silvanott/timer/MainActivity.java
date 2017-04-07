@@ -26,6 +26,9 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Die Hauptklasse die beim Start ausgeführt wird und die, die Stopuhr verwaltet
+ */
 public class MainActivity extends AppCompatActivity {
 
     public static TextView stopwatch;
@@ -39,12 +42,14 @@ public class MainActivity extends AppCompatActivity {
     private static int RESULT_LOAD_IMG = 1;
     String imgDecodableString;
 
+    /**
+     * Die OnCreate Methode die beim erstellen aufgerufen wird
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.container);
         viewPager.setAdapter(new CustomPagerAdapter(this));
@@ -69,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
     //---------------------------------------------------------------------------
     //-----------------------------Stopwatch-------------------------------------
     //---------------------------------------------------------------------------
+
+    /**
+     * die Funktion die aufgerufen wird wenn man bei der Stopwatch auf den Start / Stop button drückt
+     * @param v die -View die gedrückt wird
+     */
     public void startStop(View v) {
         TextView tv = (TextView) v;
         if(tv.getText().equals("start")){
@@ -108,6 +118,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * die Funktion die aufgerufen wird wenn man bei der Stopwatch auf den Reset / Lap button drückt
+     * @param v die View die gerdrückt wurde
+     */
     public void resetLap(View v) {
         TextView tv = (TextView) v;
         TextView lap = (TextView) findViewById(R.id.lap);
@@ -124,6 +138,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * setzt die Zeit der Stopwatch
+     * @param tv das TextView in dem die Zeit angezeigt wird
+     * @param s die Zeit als String
+     */
     private void setTime(final TextView tv,final String s){
         runOnUiThread(new Runnable() {
             public void run() {
@@ -137,6 +156,11 @@ public class MainActivity extends AppCompatActivity {
     //------------------------------------------------------------------------
     //-----------------------------Timer--------------------------------------
     //------------------------------------------------------------------------
+
+    /**
+     * die Funktion die aufgerufen wird wenn man beim Timer auf den Start / Stop button drückt
+     * @param v die View die gedrückt wurde
+     */
     public void stasto(View v){
         Button b = (Button) v;
         if(b.getText().equals("Start")){
@@ -171,6 +195,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    /**
+     * die Funktion die aufgerufen wird wenn man beim Timer auf den Reset button drückt
+     * @param v die View die gedrückt wurde
+     */
     public void reset(View v){
         Button b = (Button) findViewById(R.id.button4);
         if(b.getText().equals("Start")) {
@@ -189,6 +218,11 @@ public class MainActivity extends AppCompatActivity {
     //---------------------------------------------------------------------------
     //--------------------------Settings-----------------------------------------
     //---------------------------------------------------------------------------
+
+    /**
+     * die Funktion die aufgerufen wird wenn man bei den Settings auf den Load Image button drückt
+     * @param v die View die gedrückt wurde
+     */
     public void loadImage(View v){
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -200,6 +234,10 @@ public class MainActivity extends AppCompatActivity {
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };
 
+    /**
+     * Funktion die nach der Berechtigung fragt
+     * @param activity
+     */
     public static void verifyStoragePermissions(Activity activity) {
         int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
 
@@ -211,6 +249,13 @@ public class MainActivity extends AppCompatActivity {
             );
         }
     }
+
+    /**
+     * Funktion um das Bild aus der Galerie zu holen und anzuzeigen
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -245,6 +290,10 @@ public class MainActivity extends AppCompatActivity {
                     .show();
         }
     }
+
+    /**
+     * unterbricht den Thread
+     */
     @Override
     public void onDestroy() {
         th.interrupt();
@@ -252,6 +301,10 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+    /**
+     * setzt die Sichtbarkeit der Numberpicker und Uhr beim Timer
+     * @param enable
+     */
     public void npVisibility(boolean enable){
         nphour = (NumberPicker) findViewById(R.id.numberPicker3);
         npmin = (NumberPicker) findViewById(R.id.numberPicker2);
@@ -281,16 +334,26 @@ public class MainActivity extends AppCompatActivity {
             text.setVisibility(View.VISIBLE);
         }
     }
+
+    /**
+     * Setzt die Zeiger der Uhr
+     * @param phour das ImageView des Stundenzeigers
+     * @param pmin das ImageView des Minutenzeigers
+     * @param psec das imageView des Sekundenzeigers
+     * @param time die Zeit als Long
+     */
     public void setPointer(ImageView phour,ImageView pmin,ImageView psec,Long time){
         psec.setRotation(time/10 % 6000*0.06f);
         pmin.setRotation((time/1000 % 3600*0.1f));
         phour.setRotation(time/60000 % 720*0.5f);
     }
 
+    /**
+     * Setzt die ImageViews der Zeiger auf die Variablen hour,minute,second
+     */
     public void setTime(){
         hour = (ImageView) findViewById(R.id.imageView4);
         minute = (ImageView) findViewById(R.id.imageView3);
         second = (ImageView) findViewById(R.id.imageView2);
     }
-
 }

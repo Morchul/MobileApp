@@ -25,6 +25,9 @@ import com.example.silvanott.myapplication.sharepreferences.SharePreferences;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * die MainActivity Klasse die am Start ausgeführt wird
+ */
 public class MainActivity extends AppCompatActivity {
 
     SharePreferences sp = new SharePreferences();
@@ -33,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
     public static List<Button> buttons = new ArrayList<Button>();
     public static ConstraintLayout coord;
 
+    /**
+     * wird ausgeführt wenn die Activity Erstellt wird
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +80,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Wenn das OptionMenu erstellt wird
+     * @param menu
+     * @return true
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -80,6 +92,10 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Die methode die aufgerufen wird wenn man einen button drückt
+     * @param v das View des gedrückten Buttons
+     */
     public void click(View v){
 
         String eingabe = ((Button) v).getText()+"";
@@ -94,6 +110,11 @@ public class MainActivity extends AppCompatActivity {
         ausgabe();
     }
 
+    /**
+     * Wenn ein Item des Menues ausgewählt wird
+     * @param item das Item das ausgewählt wird
+     * @return true
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -119,6 +140,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * gibt die Rechnung im TextView aus
+     */
     public void ausgabe(){
         tx.setText(calc.getNumber());
         calculate.setText(calc.getCalc());

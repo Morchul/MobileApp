@@ -27,6 +27,9 @@ import com.example.silvanott.myapplication.sharepreferences.SharePreferences;
  * Created by silvan.ott on 27.01.2017.
  */
 
+/**
+ * Die Settings Klasse in dem das About und die Farbeinstellungen sind
+ */
 public class Settings extends AppCompatActivity {
 
     SharePreferences sp = new SharePreferences();
@@ -37,7 +40,10 @@ public class Settings extends AppCompatActivity {
     SeekBar redb;
     SeekBar greenb;
     SeekBar blueb;
-
+    /**
+     * wird ausgeführt wenn die Activity Erstellt wird
+     * @param savedInstanceState
+     */
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -150,12 +156,23 @@ public class Settings extends AppCompatActivity {
         });
     }
 
+    /**
+     * Wenn das OptionMenu erstellt wird
+     * @param menu
+     * @return true
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+    /**
+     * Wenn ein Item des Menues ausgewählt wird
+     * @param item das Item das ausgewählt wird
+     * @return true
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -179,6 +196,11 @@ public class Settings extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Ändert die Farbe der Buttons und in der SharedPreferences
+     * @param but der Button wesen Farbe geändert wird
+     * @param a true = background, false = Buttons
+     */
     public void changeColor(Button but, boolean a) {
         if (a) {
             MainActivity.coord.setBackgroundColor(Color.rgb(red.getProgress(), green.getProgress(), blue.getProgress()));
@@ -227,6 +249,10 @@ public class Settings extends AppCompatActivity {
         }
     }
 
+    /**
+     * speichert die Ausrichtung des Advances Rechner
+     * @param v der Button
+     */
     public void advancedOrientation(View v){
         boolean checked = ((CheckBox) v).isChecked();
         if(checked){

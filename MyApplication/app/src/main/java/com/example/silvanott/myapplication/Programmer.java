@@ -3,13 +3,17 @@ package com.example.silvanott.myapplication;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.silvanott.myapplication.operationen.Calculator;
@@ -22,6 +26,9 @@ import java.util.List;
  * Created by Silvan Ott on 02.04.2017.
  */
 
+/**
+ * die Programmer Klasse die für die Umwandlung zuständig ist
+ */
 public class Programmer extends AppCompatActivity {
 
     List<Button> bin,dez,hex,okt;
@@ -29,8 +36,12 @@ public class Programmer extends AppCompatActivity {
     public static TextView tx;
     public static List<Button> buttons = new ArrayList<Button>();
     public static ConstraintLayout coord;
-    String number = "";
+    String number = "",from="dez",to="";
 
+    /**
+     * wird ausgeführt wenn die Activity Erstellt wird
+     * @param savedInstanceState
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_programmer);
@@ -87,15 +98,36 @@ public class Programmer extends AppCompatActivity {
         hex.add((Button) findViewById(R.id.button16));
         hex.add((Button) findViewById(R.id.button22));
 
+        RadioGroup rg = (RadioGroup) findViewById(R.id.radioGroup);
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
+
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                RadioButton r = (RadioButton) findViewById(i);
+                to=r.getText().toString();
+                convert();
+            }
+        });
 
     }
 
+    /**
+     * Wenn das OptionMenu erstellt wird
+     * @param menu
+     * @return true
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+    /**
+     * Wenn ein Item des Menues ausgewählt wird
+     * @param item das Item das ausgewählt wird
+     * @return true
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -120,6 +152,11 @@ public class Programmer extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    /**
+     * Die methode die aufgerufen wird wenn man einen button drückt
+     * @param v das View des gedrückten Buttons
+     */
     public void click(View v){
         String input = ((Button) v).getText().toString();
         switch(input){
@@ -127,11 +164,51 @@ public class Programmer extends AppCompatActivity {
                 input=""; break;
             case "AC": number=""; input=""; break;
         }
+        if(number.equals("0")){
+            number = "";
+        }
         number += input;
         setText(number);
     }
+
+    /**
+     * gibt die Rechnung im TextView aus
+     */
     public void setText(String text){
         TextView tv = (TextView) findViewById(R.id.text);
         tv.setText(text);
+    }
+
+    /**
+     * Convertiert in ein anderes Zahlensystem
+     */
+    public void convert(){
+        try {
+        while(number.charAt(0) == '0'){
+            number = number.substring(1,number.length());
+        }
+            int i = 0;
+            switch(from){
+                case "Bin": i = Integer.parseInt(number,2);Log.d("Adapter",i+""); break;
+                case "Okt": i = Integer.parseInt(number,8);Log.d("Adapter",i+""); break;
+                case "Hex": i = Integer.parseInt(number,16);Log.d("Adapter",i+"");break;
+            }
+
+            switch (to) {
+                case "Bin":
+                    number = Integer.toString(i,2);
+                    break;
+                case "Okt":
+                    number = Integer.toString(i,8);
+                    break;
+                case "Hex":
+                    number = Integer.toString(i,16);
+                    break;
+                default : number = Integer.toString(i);
+            }
+            Log.d("Adapter",from + "/" + to + "//" + number);
+            from = to;
+            setText(number);
+        }catch(Exception e){from=to;}
     }
 }
